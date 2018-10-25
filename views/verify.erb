@@ -1,0 +1,17 @@
+<p>Please pick up the automated call, listen to the verification code and enter it in the form below.</p>
+<% if !error.nil? %>
+  <p>
+    <strong><%= error %></strong>
+  </p>
+<% end %>
+<form method="post" action="/confirm">
+    <div>
+        <label>Code:</label>
+        <br />
+        <input type="text" name="token" placeholder="123456" />
+    </div>
+    <div>
+        <input type="hidden" name="id" value="<%= id %>" />
+        <button type="submit">Confirm</button>
+    </div>
+</form>
